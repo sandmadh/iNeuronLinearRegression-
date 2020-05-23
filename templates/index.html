@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict the House Price using the following predictors</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" step = "any" name="CRIM" id="crim" placeholder="crim">
+            <input type="number" step = "any" name="ZN" id="zn" placeholder="zn">
+            <input type="number" step = "any" name="INDUS" id="indus" placeholder="indus">
+            <input type="number" step = "any" name="CHAS" id="CHAS" placeholder="chas">
+            <input type="number" step = "any" name="NOX" id="nox" placeholder="nox">
+            <input type="number" step = "any" name="RM" id="rm" placeholder="rm">
+            <input type="number" step = "any" name="AGE" id="age" placeholder="age">
+            <input type="number" step = "any" name="DIS" id="dis" placeholder="dis">
+            <input type="number" step = "any" name="RAD" id="RAD" placeholder="rad">
+            <input type="number" step = "any" name="TAX" id="tax" placeholder="tax">
+            <input type="number" step = "any" name="PTRATIO" id="ptratio" placeholder="ptratio">
+            <input type="number" step = "any" name="BB" id="bb" placeholder="bb">
+            <input type="number" step = "any" name="LSTAT" id="lstat" placeholder="lstat">
+            <input type="submit" value="Predict Price">
+        </form>
+    </div>
+</div>
+{% endblock %}
